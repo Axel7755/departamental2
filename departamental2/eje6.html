@@ -260,7 +260,7 @@
                       <button type="button" class="btn btn-block btn-primary" id="tres" name="tres" onclick="Multiplicacion();">3</button>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-block btn-success" id="raiz" name="raiz" onclick="Division();">√</button>
+                      <button type="button" class="btn btn-block btn-success" id="raiz" data-toggle="modal" data-target="#modal-sm-raiz" name="raiz">√</button>
                     </div>
                     <div class="col-3">
                         <button type="button" class="btn btn-block btn-warning" id="menos" name="menos" onclick="Division();">-</button>
@@ -278,7 +278,7 @@
                       <button type="button" class="btn btn-block btn-warning" id="igual" name="igual" onclick="Multiplicacion();">=</button>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-block btn-success" id="potencia" data-toggle="modal" data-target="#modal-sm" name="potencia" onclick="Division();">x<sup>y</sup></button>
+                      <button type="button" class="btn btn-block btn-success" id="potencia" data-toggle="modal" data-target="#modal-sm" name="potencia">x<sup>y</sup></button>
                     </div>
                     <div class="col-3">
                         <button type="button" class="btn btn-block btn-warning" id="suma" name="suma" onclick="Division();">+</button>
@@ -297,17 +297,18 @@
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Small Modal</h4>
+              <h4 class="modal-title">Potencia</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+              <label for="elevar_potencia">Ingrese la potencia: </label>
+              <input type="text" class="form-control" id="elevar_potencia" name = "elevar_potencia" placeholder="1">
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="Potencia();">Calcular</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -316,6 +317,29 @@
       </div>
       <!-- /.modal -->
       <!-- /.modal-content -->
+
+      <div class="modal fade" id="modal-sm-raiz">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Raiz</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <label for="ob_raiz">Ingrese la raiz: </label>
+              <input type="text" class="form-control" id="ob_raiz" name = "ob_raiz" placeholder="2">
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="Raiz();">Calcular</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
     </section>
     <!-- /.content -->
   </div>

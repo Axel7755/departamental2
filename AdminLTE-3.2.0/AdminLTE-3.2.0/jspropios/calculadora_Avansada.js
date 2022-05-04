@@ -23,3 +23,9 @@ function Division(){
     let suma = num1 / num2;
     alert("La suma es: "+suma);
 }
+function OPeraciones(){
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let suma = num1 / num2;
+    alert("La suma es: "+suma);
+}
