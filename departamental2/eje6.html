@@ -197,7 +197,7 @@
                 <div class="card-footer">
                   <div class="row">
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-success" id="factorial" name="factorial" onclick="Suma();">!X</button>
+                      <button type="button" class="btn btn-block btn-success" id="factorial" name="factorial" onclick="Factorial();">!X</button>
                     </div>
                     <div class="col-2">
                       <button type="button" class="btn btn-block btn-success" id="pizquiero" name="pizquiero" onclick="Resta();">(</button>
@@ -209,79 +209,79 @@
                       <button type="button" class="btn btn-block btn-success" id="porcentaje" name="porcentaje" onclick="Division();">%</button>
                     </div>
                     <div class="col-3">
-                        <button type="button" class="btn btn-block btn-danger" id="clear" name="clear" onclick="Division();">AC</button>
+                        <button type="button" class="btn btn-block btn-danger" id="clear" name="clear" onclick="Clear();">AC</button>
                     </div>                     
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="siete" name="siete" onclick="Suma();">7</button>
+                      <button type="button" class="btn btn-block btn-primary" id="siete" name="siete" onclick="agregarDijito(7);">7</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="ocho" name="ocho" onclick="Resta();">8</button>
+                      <button type="button" class="btn btn-block btn-primary" id="ocho" name="ocho" onclick="agregarDijito(8);">8</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="nueve" name="nueve" onclick="Multiplicacion();">9</button>
+                      <button type="button" class="btn btn-block btn-primary" id="nueve" name="nueve" onclick="agregarDijito(9);">9</button>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-block btn-success" id="lognatural" name="lognatural" onclick="Division();">ln</button>
+                      <button type="button" class="btn btn-block btn-success" id="lognatural" name="lognatural" onclick="LogN();">ln</button>
                     </div>
                     <div class="col-3">
-                        <button type="button" class="btn btn-block btn-warning" id="division" name="division" onclick="Division();">/</button>
+                        <button type="button" class="btn btn-block btn-warning" id="division" name="division" onclick="agregarDijito('/');">/</button>
                     </div>                     
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="cuatro" name="cuatro" onclick="Suma();">4</button>
+                      <button type="button" class="btn btn-block btn-primary" id="cuatro" name="cuatro" onclick="agregarDijito(4);">4</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="cinco" name="cinco" onclick="Resta();">5</button>
+                      <button type="button" class="btn btn-block btn-primary" id="cinco" name="cinco" onclick="agregarDijito(5);">5</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="seis" name="seis" onclick="Multiplicacion();">6</button>
+                      <button type="button" class="btn btn-block btn-primary" id="seis" name="seis" onclick="agregarDijito(6);">6</button>
                     </div>
                     <div class="col-3">
                       <button type="button" class="btn btn-block btn-success" id="logaritmo" name="logaritmo" onclick="Division();">log</button>
                     </div>
                     <div class="col-3">
-                        <button type="button" class="btn btn-block btn-warning" id="multiplicacion" name="multiplicacion" onclick="Division();">*</button>
+                        <button type="button" class="btn btn-block btn-warning" id="multiplicacion" name="multiplicacion" onclick="agregarDijito('*');">*</button>
                     </div>                     
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="uno" name="uno" onclick="Suma();">1</button>
+                      <button type="button" class="btn btn-block btn-primary" id="uno" name="uno" onclick="agregarDijito(1);">1</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="dos" name="dos" onclick="Resta();">2</button>
+                      <button type="button" class="btn btn-block btn-primary" id="dos" name="dos" onclick="agregarDijito(2);">2</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="tres" name="tres" onclick="Multiplicacion();">3</button>
+                      <button type="button" class="btn btn-block btn-primary" id="tres" name="tres" onclick="agregarDijito(3);">3</button>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-block btn-success" id="raiz" data-toggle="modal" data-target="#modal-sm-raiz" name="raiz">√</button>
+                      <button type="button" class="btn btn-block btn-success" id="raiz" name="raiz" onclick="Raiz();">√</button>
                     </div>
                     <div class="col-3">
-                        <button type="button" class="btn btn-block btn-warning" id="menos" name="menos" onclick="Division();">-</button>
+                        <button type="button" class="btn btn-block btn-warning" id="menos" name="menos" onclick="agregarDijito('-');">-</button>
                     </div>                     
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-warning" id="punto" name="punto" onclick="Suma();">.</button>
+                      <button type="button" class="btn btn-block btn-warning" id="punto" name="punto" onclick="agregarDijito('.');">.</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-primary" id="cero" name="cero" onclick="Resta();">0</button>
+                      <button type="button" class="btn btn-block btn-primary" id="cero" name="cero" onclick="agregarDijito(0);">0</button>
                     </div>
                     <div class="col-2">
-                      <button type="button" class="btn btn-block btn-warning" id="igual" name="igual" onclick="Multiplicacion();">=</button>
+                      <button type="button" class="btn btn-block btn-warning" id="igual" name="igual" onclick="CalcularResultado();">=</button>
                     </div>
                     <div class="col-3">
                       <button type="button" class="btn btn-block btn-success" id="potencia" data-toggle="modal" data-target="#modal-sm" name="potencia">x<sup>y</sup></button>
                     </div>
                     <div class="col-3">
-                        <button type="button" class="btn btn-block btn-warning" id="suma" name="suma" onclick="Division();">+</button>
+                        <button type="button" class="btn btn-block btn-warning" id="suma" name="suma" onclick="agregarDijito('+');">+</button>
                     </div>                     
                   </div>
                 </div>
@@ -317,29 +317,6 @@
       </div>
       <!-- /.modal -->
       <!-- /.modal-content -->
-
-      <div class="modal fade" id="modal-sm-raiz">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Raiz</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <label for="ob_raiz">Ingrese la raiz: </label>
-              <input type="text" class="form-control" id="ob_raiz" name = "ob_raiz" placeholder="2">
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="Raiz();">Calcular</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
     </section>
     <!-- /.content -->
   </div>
