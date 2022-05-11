@@ -940,11 +940,24 @@
                   <label for="nombre-rubro">Rubro</label>
                   <input type="text" class="form-control" id="nombre-rubro" placeholder="Ingrese">
                 </div>
+                <label for="nombre-rubro">Tiene subtemas</label>
+                <div class="form-group">
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="si_subtemas" name="subtemas">
+                    <label for="si_subtemas">
+                      Si
+                    </label>
+                  </div>
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="no_subtemas" name="subtemas">
+                    <label for="no_subtemas">
+                      No                    </label>
+                  </div>
+                </div>
               </form>
-              <p>One fine body&hellip;</p>
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-success" data-dismiss="modal">Guardar</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="actionCreate()">Guardar</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
@@ -993,6 +1006,7 @@
 <script src="../AdminLTE-3.2.0/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../AdminLTE-3.2.0/AdminLTE-3.2.0/dist/js/demo.js"></script>
+<script src="../AdminLTE-3.2.0/AdminLTE-3.2.0/jspropios/crud_rubros.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
