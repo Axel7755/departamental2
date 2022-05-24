@@ -27,10 +27,10 @@ function accionCreatePHP($conexion){
     $rubro=$_POST["rubro"];
     $subtemas=$_POST["subtemas"];
     
-    $InsertInto = "INSERT INTO rubo(id,nombre_rubro) VALUES (NULL,'$rubro',$subtemas)"
-    if($con->query($InsertInto)==true){
+    $InsertInto = "INSERT INTO rubro(id,nombre_rubro,subtemas) VALUES (NULL,'$rubro',$subtemas)";
+    if($conexion->query($InsertInto)==true){
         $Respuesta["estado"]=1;
-        $Respuesta["id"]=mysql_insert_id($conexion);
+        $Respuesta["id"]=mysqli_insert_id($conexion);
         $Respuesta["mensaje"]="El rejistro se agrego correctamente";
     }else{
         $Respuesta["estado"]=0;
@@ -55,8 +55,25 @@ function accionDeletePHP($conexion){
 }
 
 function accionReadPHP($conexion){
-    $Respuesta["estado"]=1;
-    $Respuesta["mensaje"]="Rejistros Encontrados";
+    
+    $Select = "SELECT * FROM rubro";
+    $res = $conexion->query($Select);
+        if($res->num_rows > 0){
+            $Respuesta["estado"]=1;
+            $Respuesta["mensaje"]="Rejistros Encontrados";
+            $Respuesta["rubros"]=array();
+            while($row = $res->fetch_assoc()){
+                $Rubro = array();
+                $Rubro["id"] = $row["id"];
+                $Rubro["nombre_rubro"] = $row["nombre_rubro"];
+                $Rubro["subtemas"] = $row["subtemas"];
+                array_push($Respuesta["rubros"],$Rubro);
+            }
+        }else{
+            $Respuesta["estado"] = 0;
+            $Respuesta["mensaje"] = "Rejistros no encontrados";
+        }
+
     echo json_encode($Respuesta);
 }
 
