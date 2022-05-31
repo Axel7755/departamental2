@@ -18,6 +18,9 @@ $accion = $_POST["accion"];
     case "read":
         accionReadPHP($conexion);
         break;
+    case "id_read":
+        accionReadIdPHP($conexion);
+        break;
     default:
         accionError();
 
@@ -39,19 +42,45 @@ function accionCreatePHP($conexion){
     }
     
     echo json_encode($Respuesta);
+    $conexion->close();
 }
 
 
 function accionUpdatePHP($conexion){
-    $Respuesta["estado"]=1;
-    $Respuesta["mensaje"]="El rejistro se actualizo correctamente";
+    $rubro=$_POST["rubro"];
+    $subtemas=$_POST["subtemas"];
+    
+    $InsertInto = "UPDATE `rubro` SET `nombre_rubro` = '$nombrep', `a_paternosubtemas` = '$apellidoP', `a_materno` = '$apellidoM', `num_empleado` = '$Numemp'  WHERE `profesor`.`ID` = $idactualizar";
+    if($conexion->query($InsertInto)==true){
+        $Respuesta["estado"]=1;
+        $Respuesta["id"]=mysqli_insert_id($conexion);
+        $Respuesta["mensaje"]="El rejistro se agrego correctamente";
+    }else{
+        $Respuesta["estado"]=0;
+        $Respuesta["id"]=-1;
+        $Respuesta["mensaje"]="Ocurrio un error desconocido";
+    }
+    
     echo json_encode($Respuesta);
+    $conexion->close();
 }
 
 function accionDeletePHP($conexion){
-    $Respuesta["estado"]=1;
-    $Respuesta["mensaje"]="El rejistro se elimino correctamente";
+    $id = $_POST['id'];
+    $borrar ="DELETE FROM rubro WHERE id = '$id'";
+    if($conexion->query($borrar)==true){
+        //afected_rows//rejistros afectados
+        $Respuesta["estado"]=1;
+        $Respuesta["mensaje"]="El rejistro se elimino correctamente";
+
+    }else{
+        $Respuesta["estado"]=0;
+        $Respuesta["mensaje"]="Error desconocido. El rejistro no se pudo eliminar";
+    }
+    
+    
     echo json_encode($Respuesta);
+    $conexion->close();
 }
 
 function accionReadPHP($conexion){
@@ -75,6 +104,27 @@ function accionReadPHP($conexion){
         }
 
     echo json_encode($Respuesta);
+    $conexion->close();
+}
+
+function accionReadIdPHP($conexion){
+    $id = $_POST['id'];
+    $Select = "SELECT * FROM rubro WHERE id=$id";
+    $res = $conexion->query($Select);
+        if($res->num_rows > 0){
+            $Respuesta["estado"]=1;
+            $Respuesta["mensaje"]="Rejistros Encontrados";
+            while($row = $res->fetch_assoc()){               
+                $Respuesta["id"] = $row["id"];
+                $Respuesta["nombre_rubro"] = $row["nombre_rubro"];
+                $Respuesta["subtemas"] = $row["subtemas"];
+            }
+        }else{
+            $Respuesta["estado"] = 0;
+            $Respuesta["mensaje"] = "Rejistros no encontrados";
+        }
+        echo json_encode($Respuesta);
+        $conexion->close();
 }
 
 function accionError(){

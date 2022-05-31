@@ -980,7 +980,48 @@
               <p>Deseeas eliminar la categoria de investigacion?</p>
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="actionDelete();">Eliminar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      <div class="modal fade" id="modal-actualizar-rubro">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Actualizar rubro</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="nombre-rubro-actualizar">Rubro</label>
+                  <input type="text" class="form-control" id="nombre-rubro-actualizar" placeholder="Ingrese">
+                </div>
+                <label for="nombre-rubro">Tiene subtemas</label>
+                <div class="form-group">
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="si_subtemas_actualizar" name="si_subtemas_actualizar">
+                    <label for="si_subtemas_actualizar">
+                      Si
+                    </label>
+                  </div>
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="no_subtemas_actualizar" name="no_subtemas_actualizar">
+                    <label for="no_subtemas_actualizar">
+                      No                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="actioUpdate()">Actualizar</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
