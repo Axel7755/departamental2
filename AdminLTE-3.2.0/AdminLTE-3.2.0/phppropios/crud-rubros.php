@@ -49,12 +49,13 @@ function accionCreatePHP($conexion){
 function accionUpdatePHP($conexion){
     $rubro=$_POST["rubro"];
     $subtemas=$_POST["subtemas"];
+    $id = $_POST['id'];
     
-    $InsertInto = "UPDATE `rubro` SET `nombre_rubro` = '$nombrep', `a_paternosubtemas` = '$apellidoP', `a_materno` = '$apellidoM', `num_empleado` = '$Numemp'  WHERE `profesor`.`ID` = $idactualizar";
-    if($conexion->query($InsertInto)==true){
+    $Update = "UPDATE `rubro` SET `nombre_rubro` = '$rubro', `subtemas` = '$subtemas' WHERE `rubro`.`id` = $id";
+    if($conexion->query($Update)==true){
         $Respuesta["estado"]=1;
         $Respuesta["id"]=mysqli_insert_id($conexion);
-        $Respuesta["mensaje"]="El rejistro se agrego correctamente";
+        $Respuesta["mensaje"]="El rejistro se actualizo correctamente";
     }else{
         $Respuesta["estado"]=0;
         $Respuesta["id"]=-1;
