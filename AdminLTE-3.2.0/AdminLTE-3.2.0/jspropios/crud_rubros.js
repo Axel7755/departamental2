@@ -160,9 +160,9 @@ function identificaActualizar(id){
         let nombreActualizar = document.getElementById('nombre-rubro-actualizar');
         nombreActualizar.value = miObjetoJSON.nombre_rubro;
         if(miObjetoJSON.subtemas==1){
-          $("#si_subtemas_actualizar").prop("cheked",true);
+          $("#si_subtemas_actualizar").prop("checked", true);
         }else{
-          $("#no_subtemas_actualizar").prop("cheked",true);
+          $("#no_subtemas_actualizar").prop("checked", true);
         }
         toastr.success(miObjetoJSON.mensaje);
       }else{
